@@ -1,0 +1,16 @@
+{
+"manufacturer":"Heru",
+"description":"NRF905",
+"mapping":[
+{"name":"Outdoor air in","bus_datatype":"9","type":"register","datatype":"int16","address":0,"writable":"false","value_multiplier":0.1},
+{"name":"Air Out","bus_datatype":"9","type":"register","datatype":"int16","address":1,"writable":"false","value_multiplier":0.1},
+{"name":"Air to house","bus_datatype":"9","type":"register","datatype":"int16","address":2,"writable":"false","value_multiplier":0.1},
+{"name":"Air from house","bus_datatype":"9","type":"register","datatype":"int16","address":3,"writable":"false","value_multiplier":0.1},
+{"name":"Fan speed input air","bus_datatype":"7","type":"register","datatype":"uint16","address":4,"writable":"false"},
+{"name":"Fan speed out air","bus_datatype":"7","type":"register","datatype":"uint16","address":5,"writable":"false"},
+{"name":"Away status","bus_datatype":"5","type":"register","datatype":"uint16","address":6,"writable":"false"},
+{"name":"Forced status","bus_datatype":"5","type":"register","datatype":"uint16","address":7,"writable":"false"},
+{"name":"Away mode","bus_datatype":"1","type":"register","datatype":"uint16","address":10,"writable":"true"},
+{"name":"Forced mode","bus_datatype":"1","type":"register","datatype":"uint16","address":11,"writable":"true"}
+]
+}
