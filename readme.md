@@ -4,3 +4,17 @@ Två filer finns bifogade den ena har jag använt för att logga trafiken mellan
 
 Jag kör dessa på en Wemos D1 R2(så egentligen inte en arduino) som är kopplad till en NRF905
 Dessa kinatillverkade NRF905:or verkar vara designade för en annan frekvens än den som används så räckvidden blir tyvärr begränsad till några meter.
+
+Notera Fjärrskontrollen måste ha Modbus funktionen annars ska det går att programmera om EEPROM på kretskortet från fjärrkontrollen.
+
+Esp8266 D1 Mini--nrf905
+D0----------------DR
+D1----------------CE
+D2----------------TXEN
+D3----------------PWR
+3V3---------------VCC
+D5----------------SCK
+D6----------------MISO
+D7----------------MOSI
+D8----------------CSN
+GND---------------GND
