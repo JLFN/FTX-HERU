@@ -1,0 +1,124 @@
+#################################################################
+## Group
+#https://www.home-assistant.io/integrations/modbus/
+##################################################################
+group:
+#
+  heru_ftx:
+    view: no
+    name: Heru FTX
+    control: hidden
+    entities:
+      - sensor.franluftsflakt
+      - sensor.tilluftsflakt
+      - sensor.uteluft_in
+      - sensor.avluft_ut
+      - sensor.tillluft
+      - sensor.franluft
+      - sensor.bortalage
+      - sensor.forcering
+
+
+#############################################
+# Heru FTX
+#############################################
+modbus:
+  type: tcp
+  host: 192.168.1.226
+  port: 4000
+  name: esp8266
+#############################################
+## Sensor
+#############################################f
+sensor:
+  platform: modbus
+  registers:
+    - name: Frånluftsfläkt
+      hub: esp8266
+      unit_of_measurement: rpm
+      slave: 1
+      register: 4
+      register_type: holding
+      data_type: int
+#
+    - name: Tilluftsfläkt
+      hub: esp8266
+      unit_of_measurement: rpm
+      slave: 1
+      register: 5
+      register_type: holding
+      data_type: int
+#
+    - name: Uteluft in
+      hub: esp8266
+      unit_of_measurement: °C
+      slave: 1
+      register: 0
+      register_type: holding
+      scale: 0.1
+      precision: 1
+      data_type: int
+#
+    - name: Avluft ut
+      hub: esp8266
+      unit_of_measurement: °C
+      slave: 1
+      register: 1
+      register_type: holding
+      scale: 0.1
+      precision: 1
+      data_type: int
+#
+    - name: Tillluft
+      hub: esp8266
+      unit_of_measurement: °C
+      slave: 1
+      register: 2
+      register_type: holding
+      scale: 0.1
+      precision: 1
+      data_type: int
+#
+    - name: Frånluft
+      hub: esp8266
+      unit_of_measurement: °C
+      slave: 1
+      register: 3
+      register_type: holding
+      scale: 0.1
+      precision: 1
+      data_type: int
+#
+    - name: Bortaläge
+      hub: esp8266
+      slave: 1
+      register: 10
+      register_type: holding
+      data_type: int
+#
+#
+    - name: Forcering
+      hub: esp8266
+      slave: 1
+      register: 11
+      register_type: holding
+      data_type: int
+
+
+
+
+#
+# ##################################################
+# # switch
+# ##################################################
+# switch:
+  # - platform: modbus
+    # hub: esp8266
+    # slave: 1
+    # coils:
+    # - name: FTX forcering
+    # slave: 1
+    # coil: 10
+    # - name: FTX Bortaläge
+    # slave: 1
+    # coil: 11
